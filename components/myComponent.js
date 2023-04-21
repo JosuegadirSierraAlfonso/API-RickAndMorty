@@ -1,27 +1,17 @@
-const getData=async (apiURL) => {
-    let API = 'https://rickandmortyapi.com/api/character/?page='+apiURL;
-    const api = await fetch(API);
-    const data = await api.json();
-    console.log(data);
+export default{
+    mostrarData(num){
+        const container = document.querySelector("#resultado")
+    
+        const worker = new Worker('./storage/ws.js')
+        let API = 'https://rickandmortyapi.com/api/character/?page='+num      
+        worker.postMessage(API)
 
-    divRes = document.querySelector("#resultado");
-    divRes.innerHTML=''
-    data.results.map(item=>{
-        divItem=document.createElement('div')
-        divItem.innerHTML=`
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="${item.image}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h4 class="card-title">${item.name}</h4>
-                    <p class="card-text"><b>Status: </b>${item.status}</p>
-                    <p class="card-text"><b>Specie: </b>${item.species}</p>
-                    <p class="card-text"><b>Gender: </b>${item.gender}</p>
-                </div>
-            </div>
-        </div>
-        `
-        divRes.appendChild(divItem);
-    })
+        worker.addEventListener("message", (e)=>{
+            container.innerHTML="";
+            container.insertAdjacentHTML("beforeend",e.data);
+        })
+
+
+    }
 }
-getData(1);
+
