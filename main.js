@@ -1,7 +1,8 @@
 import myComponent from "./components/myComponent.js";
+import mySearch from "./components/mySearch.js";
 
 
-
+mySearch.showSectionSearch();
 const select=document.querySelector("#pagina")
 
 for (let i = 1; i <=42; i++) {
