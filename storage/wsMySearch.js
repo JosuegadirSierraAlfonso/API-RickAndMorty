@@ -1,11 +1,12 @@
-let wsMySearch = {
-    showSearch(p1){
-        return `
-        <input type="text" class="search text-center col-lg-6 col-md-6 col-xl-6 col-sm-12" placeholder="Search..." name="" id="search-bar">
-        `
-    }
-}
 
-self.addEventListener("message", (e)=>{
-    postMessage(wsMySearch[`${e.data.module}`](e.data.data));
+    const buscarP=async(url)=>{
+        console.log(url);
+        const resp=await fetch(url)
+        const result=await resp.json();
+        console.log(result);
+    }
+
+self.addEventListener("message", async(e) => {
+    const response=await buscarP(e.data)
+    console.log(response);
 })

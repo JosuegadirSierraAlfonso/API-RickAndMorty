@@ -16,3 +16,5 @@ select.addEventListener("change", (e)=>{
     myComponent.mostrarData(number);
 })
 
+
+
