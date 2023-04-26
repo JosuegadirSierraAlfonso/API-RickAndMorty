@@ -3,8 +3,33 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body{
     text-align: center;
+    background-image: url(img/rick-and-morty-wallpaper-portal-wallpaper-001.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+img{
+    width: 900px;
+    height: 200px;
+}
+.hea{
+    background-color: rgba(7, 81, 7, 0.516);
+}
+select{
+    background-color: rgba(7, 81, 7, 0.893);
+}
+input{
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    width: 40%;
+    border: none;
+    border-bottom: 1px solid var(--colorTextos);
+    border-radius: 10px;
 }
 #resultado{
     display: grid;
@@ -13,6 +38,28 @@ body{
     gap: 30px 10px;
 }
 #pagina{
-    margin-top: 30px;
+    margin-top: 10px;
     padding: 10px;
+    border-radius: 20px;
+}
+
+
+
+
+body::-webkit-scrollbar{
+    width: 9px;
+}
+body::-webkit-scrollbar-thumb{
+    background:#056905;
+    border-radius: 5px;
+}
+
+
+select::-webkit-scrollbar{
+    width: 15px;
+    
+}
+select::-webkit-scrollbar-thumb{
+    background:#064106;
+    border-radius: 5px;
 }
